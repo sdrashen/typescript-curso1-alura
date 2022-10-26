@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "outDir": "dist/js", //Aponta em qual diretório o ts deve gravar os files depois de lê-los
+    "target": "ES6", //Aponta para qual ecma os files ts devem ser convertidos
+  },
+  "include": [ //Aponta onde estão os files que devem ser lidos pelo ts
+    "app/**/*" //Lê-se: Pasta app, toda subpasta e qualquer arquivo
+  ]
+}
+
+/*NOTE: No package.json, linha 10,
+o "compile" pode ter outro nome, ñ é obrigatório ser "compile" */
