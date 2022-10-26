@@ -1,15 +1,14 @@
 export class Negociacao {
   //Atributos privados #
-  #data;
-  #quantidade;
-  #valor;
+  private _data;
+  private _quantidade;
+  private _valor;
 
   constructor(data, quantidade, valor) {
-    this.#data = data;
-    this.#quantidade = quantidade;
-    this.#valor = valor;
-  }
-
+    this._data = data;
+    this._quantidade = quantidade;
+    this._valor = valor;
+  }_
   /**Aqui vemos que, com a linguagem mais moderna do Js,
    * conseguimos criar atributos provados de uma classe,
    * nos quais podemos atribuir valores atavés do construtor
@@ -22,18 +21,26 @@ export class Negociacao {
    * é read only.
    */
   get data() {
-    return this.#data;
+    return this._data;
   }
 
   get quantidade() {
-    return this.#quantidade;
+    return this._quantidade;
   }
 
   get valor() {
-    return this.#valor;
+    return this._valor;
   }
 
   get volume() {
-    return this.#quantidade * this.#valor;
+    return this._quantidade * this._valor;
   }
 }
+
+/**Um getter ñ pode ter o mesmo nome de uma propriedade encapsulada dentro da sua classe.
+ * Por isso, mudamos de # para _. Esse _ é uma conveção antiga do JS
+ * para indicar que algo é privado, que vc ñ everai acessar aquilo fora
+ * do domínio de sua classe.
+ * É necessário inserir o modificador private porque só com o _
+ * seria ainda possível acessar alterar as propriedades internas em negociação em app.ts
+*/
