@@ -1,5 +1,4 @@
 export class Negociacao {
-  //Atributos privados #
   private _data;
   private _quantidade;
   private _valor;
@@ -43,4 +42,6 @@ export class Negociacao {
  * do domínio de sua classe.
  * É necessário inserir o modificador private porque só com o _
  * seria ainda possível acessar alterar as propriedades internas em negociação em app.ts
+ * O _ ñ é obrigatório para privar as propriedades, o private sozinho já faz isso.
+ * O TS permite omitir o tipo public quando nenhum modificador é definido.
 */
