@@ -2,8 +2,8 @@ import { NegociacaoController } from "./controllers/negociacao-controller.js";
 //Atentar para colocar o .js no final porque o auto import ñ o traz
 
 const controller = new NegociacaoController();
-const from = document.querySelector('.form');
-from.addEventListener('submit', event => { //O TS já infere esse tipo event
+const form = document.querySelector('.form');
+form.addEventListener('submit', event => { //O TS já infere esse tipo event
   event.preventDefault(); //Cancela o refresh default da page ao submeter o form
   controller.adiciona();
 })
