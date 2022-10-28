@@ -1,16 +1,19 @@
-import { Negociacao } from "./models/negociacao.js";
+import { NegociacaoConroller } from "./controllers/negociacao-controller.js";
+//Atentar para colocar o .js no final porque o auto import ñ o traz
 
-// const negociacao = new Negociacao(new Date(), 10, 100);
-// console.log(negociacao);
-// negociacao.quantidade = 10000;
-// console.log(negociacao);
+const controller = new NegociacaoConroller();
+const from = document.querySelector('.form');
+from.addEventListener('submit', event => {
+  event.preventDefault(); //Cancela o refresh default da page ao submeter o form
+  controller.adiciona();
+})
 
-/**Conseguimos alterar quantidade mas não a quantidade privada da instância de negociação.
- * O JS por ser uma linguagem dinâmica, ele add a property "quantidade" dinamicamente
- * nesse objeto. Ele não consegue ter relação nenhuma com a quantidade que está
- * internamente na classe.
+/**Toda vez que o form for chamado, add o método adiciona() */
+/**O TS informa, após o querySelector, que está sendo retornado 
+ * um item do tipo "element". Ou seja, o form ganhou um tipo implícito (element),
+ * por isso ele tem o addEventListener (todo element tem).
  */
-
-const negociacao = new Negociacao(new Date(), 10, 100);
-
-/**O get dá acesso como se fosse uma propriedade de classe. */
+/**Todo formulário quando é submetido faz o refresh da página.
+ * Esta aplicação tenta copiar um SPA, assim é necessário cancelar o evento padrão
+ *do formulário, que é a submissão.
+ */
