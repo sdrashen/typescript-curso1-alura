@@ -2,9 +2,10 @@
   "compilerOptions": {
     "outDir": "dist/js", //Aponta em qual diretório o ts deve gravar os files depois de lê-los
     "target": "ES6", //Aponta para qual ecma os files ts devem ser convertidos
-    "noEmitOnError": true /*Faz com que ñ seja gerado
+    "noEmitOnError": true, /*Faz com que ñ seja gerado
     *um file JS enquanto o TS ñ estiver passando na compilação.
     *Isso evita que os JS files sejam gerados com problema.*/
+    "noImplicitAny": true
   },
   "include": [ //Aponta onde estão os files que devem ser lidos pelo ts
     "app/**/*" //Lê-se: Pasta app, toda subpasta e qualquer arquivo

@@ -1,4 +1,6 @@
-export class NegociacaoConroller {
+import { Negociacao } from "../models/negociacao.js";
+
+export class NegociacaoController {
   private inputData;
   private inputQuantidade;
   private inputValor;
@@ -10,9 +12,12 @@ export class NegociacaoConroller {
   }
 
   adiciona() {
-    console.log(this.inputData);
-    console.log(this.inputQuantidade);
-    console.log(this.inputValor);
+    const negociacao = new Negociacao(
+      this.inputData.value,
+      this.inputQuantidade.value,
+      this.inputValor.value
+    );
+    console.log(negociacao);//E veremos que até agora os dados estão todos como string
   }
 }
 

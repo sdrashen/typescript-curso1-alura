@@ -1,13 +1,13 @@
-export class NegociacaoConroller {
+import { Negociacao } from "../models/negociacao.js";
+export class NegociacaoController {
     constructor() {
         this.inputData = document.querySelector('#data');
         this.inputQuantidade = document.querySelector('#quantidade');
         this.inputValor = document.querySelector('#valor');
     }
     adiciona() {
-        console.log(this.inputData);
-        console.log(this.inputQuantidade);
-        console.log(this.inputValor);
+        const negociacao = new Negociacao(this.inputData.value, this.inputQuantidade.value, this.inputValor.value);
+        console.log(negociacao); //E veremos que até agora os dados estão todos como string
     }
 }
 /**Objetivo aqui: criar a classe controller e uma instância dessa classe usando os dados pedidos(data, quantidade e valor)

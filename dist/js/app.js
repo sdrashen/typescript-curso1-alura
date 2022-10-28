@@ -1,12 +1,12 @@
-import { NegociacaoConroller } from "./controllers/negociacao-controller.js";
+import { NegociacaoController } from "./controllers/negociacao-controller.js";
 //Atentar para colocar o .js no final porque o auto import ñ o traz
-const controller = new NegociacaoConroller();
+const controller = new NegociacaoController();
 const from = document.querySelector('.form');
 from.addEventListener('submit', event => {
     event.preventDefault(); //Cancela o refresh default da page ao submeter o form
     controller.adiciona();
 });
-/**Toda vez que o form for chamado, add o método adiciona() */
+//Toda vez que o form for chamado, add o método adiciona()
 /**O TS informa, após o querySelector, que está sendo retornado
  * um item do tipo "element". Ou seja, o form ganhou um tipo implícito (element),
  * por isso ele tem o addEventListener (todo element tem).

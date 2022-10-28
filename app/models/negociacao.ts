@@ -1,13 +1,19 @@
 export class Negociacao {
-  private _data;
-  private _quantidade;
-  private _valor;
+  private _data: Date;
+  private _quantidade: number;
+  private _valor: number;
 
-  constructor(data, quantidade, valor) {
+  constructor(data: Date, quantidade: number, valor: number) { //No TS o tipo vem depois
+    /**Tendo definido os devidos tipos
+     * o TS consegue entender nos outros campos
+     * o tipo em questão. Ainda assim é interessante informa o tipo
+     * também nos atributos.
+     */
     this._data = data;
     this._quantidade = quantidade;
     this._valor = valor;
-  }_
+  }
+
   /**Aqui vemos que, com a linguagem mais moderna do Js,
    * conseguimos criar atributos provados de uma classe,
    * nos quais podemos atribuir valores atavés do construtor
