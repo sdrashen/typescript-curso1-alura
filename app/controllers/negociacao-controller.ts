@@ -12,11 +12,17 @@ export class NegociacaoController {
   }
 
   adiciona() {
-    const negociacao = new Negociacao(
-      this.inputData.value,
-      this.inputQuantidade.value,
-      this.inputValor.value
-    );
+    const exp = /-/g; /*Essa é uma expressão regular
+    *A letra g indica que todos os hífens sejam encontrados*/
+    const date = new Date(this.inputData.value.replace(exp, ','));
+    /**O método replace pode reeceber como primeiro parâmetro a expressão regular
+     * e como segundo o que se deseja colocar no lugar do - .
+     */
+    const quantidade = parseInt(this.inputQuantidade.value);
+    //Através do parseInt conseguimos converter a quantidade para inteiro
+    const valor = parseFloat(this.inputValor.value); //parseFloat porque esse valor pode ter decimais
+    const negociacao = new Negociacao(date, quantidade, valor);
+
     console.log(negociacao);//E veremos que até agora os dados estão todos como string
   }
 }
